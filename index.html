@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="si">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17101f">
+  <meta name="description" content="A little love letter and memory book for Sudu — three years together.">
+  <title>For Sudu — Three Years Together</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked">
+  <section class="lock-screen" id="lockScreen" aria-labelledby="lockTitle">
+    <div class="lock-card">
+      <div class="lock-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" focusable="false">
+          <path d="M14 20v-5a10 10 0 0 1 20 0v5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+          <rect x="9" y="19" width="30" height="23" rx="5" fill="currentColor" />
+          <path d="M24 27v7" fill="none" stroke="#3a2237" stroke-width="2.5" stroke-linecap="round" />
+          <circle cx="24" cy="26" r="2" fill="#3a2237" />
+        </svg>
+      </div>
+      <p class="eyebrow">A little secret, just for you</p>
+      <h1 class="lock-title" id="lockTitle">Before you come in,<br><em>my Sudu…</em></h1>
+      <p class="lock-copy">Choose the date our story began to open your surprise.</p>
+      <form class="unlock-form" id="unlockForm" novalidate>
+        <label for="anniversaryDate">Our special date</label>
+        <input id="anniversaryDate" name="anniversaryDate" type="date" required aria-describedby="dateHint lockError">
+        <p class="date-hint" id="dateHint">A date only the two of us would know ♥</p>
+        <button class="unlock-button" id="unlockButton" type="submit">Unlock my surprise <span aria-hidden="true">♥</span></button>
+        <p class="lock-error" id="lockError" role="alert" hidden>That isn't quite it, Sudu. Try our special date again.</p>
+      </form>
+      <p class="lock-footnote">Made with love, and saved just for you.</p>
+    </div>
+  </section>
+
+  <div class="page-shell" id="surpriseSite" aria-hidden="true">
+    <a class="skip-link" href="#main">Skip to the surprise</a>
+    <header class="topbar">
+      <a class="wordmark" href="#start" aria-label="Back to the beginning">s<span aria-hidden="true">♥</span>s</a>
+      <p class="anniversary-tag"><span class="tag-dot" aria-hidden="true"></span> three years of us</p>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="start" aria-labelledby="hero-title">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="stars stars-one" aria-hidden="true">✦　 ·　 ✧　　 ✦</div>
+        <div class="stars stars-two" aria-hidden="true">·　 ✧　 ·　 ✦</div>
+
+        <div class="hero-content">
+          <p class="eyebrow">A little surprise, made with love</p>
+          <h1 id="hero-title">For my <span>Sudu</span><span class="title-heart" aria-hidden="true">♥</span></h1>
+          <p class="hero-subtitle">අපේ ආදර කතාවට අවුරුදු තුනක්.<br>Here's a little piece of my heart for you.</p>
+
+          <button class="envelope-button" id="openLetter" type="button" aria-expanded="false" aria-controls="letterCard">
+            <span class="envelope-wrap" aria-hidden="true">
+              <span class="envelope-back"></span>
+              <span class="letter-peek"><span>for you</span><span class="mini-heart">♥</span></span>
+              <span class="envelope-front"></span>
+              <span class="envelope-flap"></span>
+              <span class="envelope-seal">♥</span>
+            </span>
+            <span class="open-label" id="openLabel">Open your letter</span>
+          </button>
+          <p class="hero-hint">Take your time. This little page is just for you.</p>
+
+          <article class="letter-card" id="letterCard" hidden aria-labelledby="letter-heading">
+            <p class="letter-kicker" id="letter-heading">A note from me to you</p>
+            <p class="letter-copy" id="letterText" aria-live="polite"></p>
+            <span class="type-cursor" id="typeCursor" aria-hidden="true"></span>
+            <button class="text-button" id="toMemories" type="button" hidden>
+              Come see our memories <span aria-hidden="true">↓</span>
+            </button>
+          </article>
+        </div>
+        <div class="scroll-cue" aria-hidden="true"><span></span> keep going</div>
+      </section>
+
+      <section class="memories section-pad" id="memories" aria-labelledby="memories-title">
+        <div class="section-heading">
+          <p class="eyebrow">Little moments, big love</p>
+          <h2 id="memories-title">Our little <em>world</em></h2>
+          <p class="section-intro">22 little places for the moments I want to keep close, wherever we are.</p>
+        </div>
+
+        <div class="memory-track" id="memoryTrack" aria-label="Our 22 memory cards"></div>
+        <p class="swipe-hint"><span aria-hidden="true">←</span> Swipe to see more <span aria-hidden="true">→</span></p>
+
+        <div class="secret-box" aria-labelledby="secret-title">
+          <p class="secret-title" id="secret-title">Psst… I left a few tiny notes for you</p>
+          <p class="secret-hint">Tap each little star to find them.</p>
+          <div class="secret-list" id="secretList"></div>
+        </div>
+      </section>
+
+      <section class="final-section section-pad" id="final" aria-labelledby="final-title">
+        <div class="final-card">
+          <div class="final-stars" aria-hidden="true">✦　♥　✧</div>
+          <p class="eyebrow">And one last thing…</p>
+          <h2 id="final-title">You are my<br><em>favorite</em> story.</h2>
+          <p class="final-intro">Three years down, and I would still choose you in every version of our story.</p>
+          <button class="final-button" id="finalRevealButton" type="button" aria-expanded="false" aria-controls="finalReveal">
+            Open my last little surprise <span aria-hidden="true">♥</span>
+          </button>
+          <div class="final-reveal" id="finalReveal" hidden aria-live="polite">
+            <div class="floating-hearts" aria-hidden="true"><span>♥</span><span>♥</span><span>♥</span><span>♥</span><span>♥</span></div>
+            <p class="final-message" id="finalMessage"></p>
+            <p class="signature" id="signature"></p>
+          </div>
+          <button class="replay-button" id="replayButton" type="button" hidden>Read it all again</button>
+        </div>
+        <footer class="footer-note">Made for you, with all my heart <span aria-hidden="true">♥</span></footer>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
